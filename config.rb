@@ -64,6 +64,7 @@ activate :relative_assets
 # Build-specific configuration
 configure :build do
   ignore 'images/*.psd'
+  ignore 'images/carousel_components/*'
   ignore 'images/*.xcf'
   ignore 'stylesheets/lib/*'
   ignore 'stylesheets/vendor/*'
