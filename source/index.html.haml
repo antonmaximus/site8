@@ -1,0 +1,166 @@
+---
+title: Anton
+body_class: index
+---
+
+%header
+  .welcome#scrollToPortfolio
+    %h1 A
+    %p Anton. Web Dev. Los Angeles.
+
+%hr.topHR
+%section.web#webPortfolio
+  %h1 Web Work
+  .panel
+    %figure.wow.flipInY{"data-wow-delay"=>"0.44s"}
+      %a{ href:"//antonmaximus.github.io/jsCarousel/build/", target:"_blank" } 
+        = image_tag('./web/jscarousel.png', alt:"")
+      %figcaption
+        %h3 JavaScript OOP
+        %p 
+          Object-oriented programming using raw JavaScript to create Carousel objects. 
+          The app also supports Flickr API.
+        .gitDiv
+          %p 
+            %a.gitLink{ href:"https://github.com/antonmaximus/jsCarousel", target:"_blank" } 
+              %i.fa.fa-github.fa-2x
+              View Code on GitHub
+        %p.tags
+          %span JavaScript
+          %span No jQuery
+          %span AJAX
+          %span JSON
+          %span JSONP
+          %span MVC
+          %span OOP
+          %span Flickr API
+
+  .panel
+    %figure.wow.flipInY{"data-wow-delay"=>"0.44s"}
+      %a{ href:"//antonmaximus.github.io/improvmastersproject/build/", target:"_blank" } 
+        = image_tag('./web/improvMasters.png', alt:"")
+      %figcaption
+        %h3 Design
+        %p A site incorporating various design techniques, uses Twitter Bootstrap, &amp; uses Google Docs as a backend.
+        .gitDiv
+          %p 
+            %a.gitLink{ href:"//github.com/antonmaximus/improvmastersproject", target:"_blank" } 
+              %i.fa.fa-github.fa-2x
+              View Code on GitHub
+        %p.tags
+          %span Twitter Bootstrap
+          %span jQuery
+          %span HTML5
+          %span CSS3
+          %span Google Docs as backend
+          %span JSON
+          %span Design
+
+  .panel
+    %figure.wow.flipInY{"data-wow-delay"=>"0.25s"}
+      %a{ href:"//fiddystates.herokuapp.com/", target:"_blank" } 
+        = image_tag('./web/fiddyStates.png', alt:"")
+      %figcaption
+        %h3 JavaScript App
+        %p A web app built in raw JavaScript that utilizes an MVC framework.
+        .gitDiv
+          %p 
+            %a.gitLink{ href:"//github.com/antonmaximus/states", target:"_blank" } 
+              %i.fa.fa-github.fa-2x
+              View Code on GitHub
+        %p.tags
+          %span JavaScript
+          %span No jQuery
+          %span AJAX
+          %span JSON
+          %span PHP
+          %span MVC
+
+%hr 
+%section.animation
+  %h1 Animation
+
+  .objectWrapper
+    .videoWrapper
+      %iframe.youtube-player{ type:'text/html', allowfullscreen:true, src:'//www.youtube.com/embed/IGdQ-C8-jlc?wmode=transparent&amp;autoplay=0&amp;rel=0&amp;showinfo=0&amp;autohide=1&amp;color=white&amp;'}
+
+  .carouselWrapper
+    .carousel.slide#myCarousel{ data:{ ride:'carousel', interval:'2300' } }
+      / Carousel Indicators
+      %ol.carousel-indicators
+        / Looping elements for the dropdown sub-menu
+        - (0..4).each do |i|
+          - @active = i==0 ? 'active' : ''
+          %li{ class:@active, data:{ target:'#myCarousel', slide:{to: i } } }
+      .carousel-inner
+        - @alt = ['Fufu', 'Savage Oppress', 'Super Ace & Killer', 'Nite Owl', 'Bob']
+        - @path = ['fufu', 'savageOppress', 'killerSuperAceHighFive', 'deathWatchNiteOwl', 'bob']
+        - @alt.zip(@path).each do |varAlt, varPath|
+          .item{ class: varPath=='fufu' ? 'active' : '' }
+            = image_tag('forAnimationCarousel/450_'+varPath+'.png', alt:varAlt)
+      %a.carousel-control.left{ href:'#myCarousel', 'data-slide'=>'prev' }
+        %span.glyphicon.glyphicon-chevron-left
+      %a.carousel-control.right{ href:'#myCarousel', 'data-slide'=>'next' }
+        %span.glyphicon.glyphicon-chevron-right
+
+
+%hr 
+%section.cplusplus
+  %h1 C++
+  .objectWrapper
+    .videoWrapper
+      %iframe.youtube-player{ type:'text/html', allowfullscreen:true, src:'//www.youtube.com/embed/DR_7Y5M9ORE?wmode=transparent&amp;autoplay=0&amp;rel=0&amp;showinfo=0&amp;autohide=1&amp;color=white&amp;'}
+
+
+%footer
+  %ul
+    %li
+      %a{ id:'emailako', href:'#', alt:'email' }
+        %i.fa.fa-envelope-o.fa-2x
+        %span Email
+    %li
+      %a{ href:'//www.linkedin.com/in/anton23', alt:'LinkedIn', target:'_blank' }
+        %i.fa.fa-linkedin-square.fa-2x
+        %span Resume
+    %li
+      %a{ href:'//blog.anton23.com', alt:'Blog', target:'_blank' }
+        %i.fa.fa-book.fa-2x
+        %span Blog
+    %li
+      %a{ href:'//twitter.com/antonmaximus', alt:'Twitter', target:'_blank' }
+        %i.fa.fa-twitter.fa-2x
+        %span Twitter
+
+
+
+
+/ 
+/ - if build?
+/ - else
+/   = javascript_include_tag "carousel/helperFunctions.js"
+/   = javascript_include_tag "carousel/helperFunctionsFlickr.js"
+/   = javascript_include_tag "carousel/controllers.js"
+/   = javascript_include_tag "carousel/views.js"
+/   = javascript_include_tag "carousel/models.js"
+/   = javascript_include_tag "ajCustom.js"
+
+
+
+
+/ More Scripts
+/ :javascript
+/   var carouselA = new CAROUSEL.Carousel({ divId: 'carouselA', jsonPath: './javascripts/json/animationWork.json', 
+/   download: 'false', backgroundColor: '#808080',
+/   width: 640, height: 400 });
+
+
+
+
+
+
+
+
+
+
+
+
