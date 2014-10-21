@@ -3,7 +3,7 @@
 
 
 /*------------------------------------*\
-    $Welcom Animation
+    $Welcome Animation
 \*------------------------------------*/
 .welcome {
   animation-name: welcome;
@@ -28,7 +28,33 @@
   }
 }
 
+.lighting {
+  animation-name: fadein;
+  animation-duration: 0.9s;
+  animation-delay: 0.9s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 
+  position: absolute;
+  top: 6%;
+  left: 3%;
+  a {
+    color: $fg;
+    &:hover {
+      color: $mid;
+    }
+  }
+}
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1; 
+  }
+}
 
 
 /*------------------------------------*\
@@ -48,9 +74,6 @@ body {
   }
 }
 
-#scrollToPortfolio {
-  cursor: pointer;
-}
 section {
   margin-bottom: 70px; 
   h1 {
@@ -58,16 +81,9 @@ section {
   }
 }
 
-.lighting {
-  position: absolute;
-  top: 6%;
-  left: 3%;
-  a {
-    color: $fg;
-    &:hover {
-      color: $mid;
-    }
-  }
+
+#scrollToPortfolio {
+  cursor: pointer;
 }
 
 header {
