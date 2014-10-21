@@ -41,36 +41,16 @@
     %meta(name="msapplication-TileColor" content="#da532c")
     %meta(name="msapplication-TileImage" content="./images/favicons/mstile-144x144.png")
     %meta(name="msapplication-config" content="./images/favicons/browserconfig.xml")
-    / %link{:href => "./images/favicon/favicon.ico", :rel => "shortcut icon"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-57x57.png", :rel => "apple-touch-icon", :sizes => "57x57"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-144x144.png", :rel => "apple-touch-icon", :sizes => "144x144"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-60x60.png", :rel => "apple-touch-icon", :sizes => "60x60"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-120x120.png", :rel => "apple-touch-icon", :sizes => "120x120"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-76x76.png", :rel => "apple-touch-icon", :sizes => "76x76"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-152x152.png", :rel => "apple-touch-icon", :sizes => "152x152"}/
-    / %link{:href => "./images/favicon/apple-touch-icon-180x180.png", :rel => "apple-touch-icon", :sizes => "180x180"}/
-    / %link{:href => "./images/favicon/favicon-192x192.png", :rel => "icon", :sizes => "192x192", :type => "image/png"}/
-    / %link{:href => "./images/favicon/favicon-160x160.png", :rel => "icon", :sizes => "160x160", :type => "image/png"}/
-    / %link{:href => "./images/favicon/favicon-96x96.png", :rel => "icon", :sizes => "96x96", :type => "image/png"}/
-    / %link{:href => "./images/favicon/favicon-16x16.png", :rel => "icon", :sizes => "16x16", :type => "image/png"}/
-    / %link{:href => "./images/favicon/favicon-32x32.png", :rel => "icon", :sizes => "32x32", :type => "image/png"}/
-    / %meta{:content => "#da532c", :name => "msapplication-TileColor"}/
-    / %meta{:content => "./images/favicon/mstile-144x144.png", :name => "msapplication-TileImage"}/
-    / %meta{:content => "./images/favicon/browserconfig.xml", :name => "msapplication-config"}/
 
 
 
     / $BOOTSTRAP  CSS CDN 
     %link(rel="stylesheet"  href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
 
-
     / Stylesheets
-    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'light'
   %body{class: current_page.data.body_class || 'page'}
     = yield
-
     / JQUERY CDN
     = javascript_include_tag  "//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"
     / JQUERY Fallback
@@ -82,8 +62,6 @@
     / BOOTSTRAP JS Fallback
     :javascript
         if(typeof($.fn.modal) === 'undefined') {document.write('<script src="./fallback/3.1.1/js/bootstrap.min.js"><\/script>')}
-
-
 
     / BOOTSTRAP CSS Fallback
     :javascript
@@ -102,9 +80,13 @@
         $("head").prepend('<link rel="stylesheet" href="./fallback/font-awesome-4.1.0/css/font-awesome.min.css">');}});
 
 
+    / Javascripts
+    = javascript_include_tag "ajCustom.js"
 
-    / scripts        
-    = javascript_include_tag "application.js"          
+    / Animation by Wow.js
+    = javascript_include_tag "wow.min.js"
+    :javascript
+        new WOW().init();
 
 
     - if build?
