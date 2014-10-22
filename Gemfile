@@ -15,3 +15,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'middleman-autoprefixer'
 
+gem 'middleman-minify-html'
