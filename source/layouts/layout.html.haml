@@ -45,12 +45,13 @@
 
 
 
-    / Stylesheets
-    = stylesheet_link_tag 'light'
+
 
     / $BOOTSTRAP  CSS CDN 
     %link(rel="stylesheet"  href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
 
+    / Stylesheets
+    = stylesheet_link_tag 'light'
 
   %body{class: current_page.data.body_class || 'page'}
     = yield

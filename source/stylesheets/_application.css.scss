@@ -72,16 +72,28 @@ header {
   font-family: $titleFont;
 
   h1 { 
-    font-size: 181px;
+    font-size: 180px;
     font-weight: lighter;
-    line-height: 155px;
+    line-height: 100%;
 
     margin: 10% auto 0;
     max-width: 181px;
+
+    border: 3px dotted transparent;
+    border-radius: 5px;
+
+    // display: table-cell;
+    // vertical-align: middle;
+
+
+    &:hover {
+      color: $mid;
+      // border: 3px  dotted $fg;
+    }
   }
 
   p {
-    margin: 0;
+    margin: 3px 0 0;
     font-size: 16px;
   }
 }
@@ -109,6 +121,7 @@ hr.topHR {
   height: 455px;
   background-color: $panel;
   padding: 15px;
+  border-radius: 5px;
 
   display: inline-block;
   vertical-align: top; //To align them divs
